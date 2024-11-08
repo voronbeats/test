@@ -1,10 +1,17 @@
 <?php
+
+use yii\helpers\BaseUrl;
+
 $params = array_merge(
     require __DIR__ . '/../../common/config/params.php',
     require __DIR__ . '/../../common/config/params-local.php',
     require __DIR__ . '/params.php',
     require __DIR__ . '/params-local.php'
 );
+
+use \yii\web\Request;
+$baseUrl = str_replace('/frontend/web', '', (new Request)->getBaseUrl());
+
 
 return [
     'id' => 'app-frontend',
@@ -37,14 +44,16 @@ return [
             'errorAction' => 'site/error',
         ],
         'urlManager' => [
+            'baseUrl' => $baseUrl,
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                '' => 'site/index',
-                '<controller:\w+>/<action:\w+>/' => '<controller>/<action>',
-            ],
-        ],
-        'baseUrl' => '',
+                '' => 'offers/index',
+                'create' => 'offers/create'
+            ]
+        ]
+
+
     ],
     'params' => $params,
 ];

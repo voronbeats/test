@@ -18,8 +18,11 @@ return [
             ],
         ],
         'baseUrl' => '/admin',
+        'formatter' => [
+            'dateFormat' => 'dd.MM.yyyy',
+        ],
     ],
-    
+
 
 
 

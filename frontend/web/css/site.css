@@ -101,3 +101,20 @@ a.desc:after {
 {
     text-decoration: none;
 }
+
+.pagination * {
+    color: white;
+    width: 30px;
+    background-color: rgb(99, 206, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1px;
+    margin: 3px;
+    text-decoration: none;
+}
+
+.pagination .active {
+    text-decoration: underline;
+}
+
